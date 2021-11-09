@@ -1,0 +1,33 @@
+.product-container{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    margin: 50px 0;
+}
+.details{
+    padding-left: 25px;
+    padding-right: 10px;
+    text-align: justify;
+}
+.details h2{
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 32px;
+    color: rgb(36, 68, 167);
+}
+span {
+  content: "\0024";
+} 
+.details button{
+    width: 160px;
+    height: 32px;
+    background-color: rgb(0, 163, 141);
+    border: none;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.details button:hover{
+    background-color: rgb(0, 131, 113);
+}

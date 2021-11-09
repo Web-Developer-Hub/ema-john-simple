@@ -1,0 +1,16 @@
+.shop-container{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.product{
+    border-right: 1px solid lightgray;
+    margin-right: 15px;
+}
+
+.product .count{
+    text-align: center;
+    color: rgb(46, 92, 134);
+    font-size: 24px;
+}
