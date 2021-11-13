@@ -16,7 +16,7 @@ const Cart = (props) => {
         product.quantity = !product.quantity ? 1 : product.quantity; // sortcut if condition
         totalPrice += product.price * product.quantity;
         shipping += product.shipping * product.quantity; 
-        totalQuantity += product.quantity * product.quantity;
+        totalQuantity += product.quantity;
     }
 
     return (
