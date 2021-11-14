@@ -59,7 +59,7 @@ const Shop = () => {
         <>
             <div className="search-bar">
                 <input onChange={ handleSearch } type="text" placeholder="Search Your Product"/>
-                <span>{element}</span>
+                <span>{element} {cart.length}</span>
             </div>
         <div className="shop-container">
             <div className="product">
