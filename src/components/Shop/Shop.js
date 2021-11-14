@@ -2,17 +2,24 @@ import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import { addToDb, getStoredCart } from '../../utilities/fakedb'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import './Shop.css'
+const element = <FontAwesomeIcon icon={faShoppingCart} />
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([])
+    const [displayProducts, setDisplayProducts] = useState([])
 
     useEffect(() => {
         const URL = `./fakeData/products.JSON`;
         fetch(URL)
             .then((res) => res.json())
-            .then((data) => setProducts(data));
+            .then((data) => {
+                setProducts(data)
+                setDisplayProducts(data)
+            });
     }, [])
     
     useEffect(() => {
@@ -41,13 +48,25 @@ const Shop = () => {
         //add to product localStorage....
         addToDb(product.key)
     }
+    //this is handle serarch function
+    const handleSearch = (event) => {
+        const searchText = event.target.value;
+        const matchedProduct = products.filter((product) => product.name.toLowerCase().includes(searchText.toLowerCase()));
+        setDisplayProducts(matchedProduct);
+    }
 
     return (
+        <>
+            <div className="search-bar">
+                <input onChange={ handleSearch } type="text" placeholder="Search Your Product"/>
+                <span>{element}</span>
+            </div>
         <div className="shop-container">
             <div className="product">
-                <h3 className="count">Total available products: {products.length}</h3>
+                    <h3 className="count">Total available products: {products.length}</h3>
+                    
                 {
-                    products.map((product) => <Product
+                    displayProducts.map((product) => <Product
                     key={product.key}
                     product={product}
                     handleAddToCart={handleAddToCart}
@@ -56,10 +75,11 @@ const Shop = () => {
                 }
             </div>
 
-            <div className="cart">
-                <Cart cart={cart}></Cart>
-            </div>
+                <div className="cart">
+                    <Cart cart={cart}></Cart>
+                </div>
         </div>
+        </>
     );
 };
 

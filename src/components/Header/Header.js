@@ -15,10 +15,6 @@ const Header = () => {
                     <a href="/order">Order</a>
                     <a href="/inventory">Manage Inventory</a>
                 </nav>
-                <div className="search-bar">
-                    <input type="text" />
-                    <img src="" alt="cart" />
-                </div>
             </div>
         </div>
     );

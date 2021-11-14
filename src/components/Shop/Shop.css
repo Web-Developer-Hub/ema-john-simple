@@ -14,3 +14,22 @@
     color: rgb(46, 92, 134);
     font-size: 24px;
 }
+.search-bar {
+    background-color: rgb(36, 36, 36);
+    padding: 10px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar input{
+    width: 800px;
+    height: 20px;
+    margin-right: 10px;
+    font-size: 18px;
+    padding: 5px;
+}
+.search-bar span{
+    color: rgb(250, 179, 0);
+    font-size: 1.6rem;
+}

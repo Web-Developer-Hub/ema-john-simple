@@ -31,3 +31,7 @@ span {
 .details button:hover{
     background-color: rgb(0, 131, 113);
 }
+.icon-color{
+    color: rgb(243, 198, 0);
+    font-size: 18px;
+}
